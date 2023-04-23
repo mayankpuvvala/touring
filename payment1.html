@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="payment.css">
+    <title>payment portal</title>
+    <style>
+        .address{
+            color: blueviolet;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .header h1 {
+            margin: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        .row label {
+            font-weight: bold;
+        }
+        .row span {
+            color: #555;
+        }
+        .image {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+    <form action="">
+        <h1 style="text-align: center;">payment gateway</h1>
+        
+    <div class="container">
+        <div class="row">
+            <label for="from">From:</label>
+            <span id="from"></span>
+        </div>
+        <div class="row">
+            <label for="to">To:</label>
+            <span id="to"></span>
+        </div>
+        <div class="row">
+            <label for="time">Time:</label>
+            <span id="time"></span>
+        </div>
+        <div class="row">
+            <label for="date">Date:</label>
+            <span id="date"></span>
+        </div>
+    </div>
+
+    <script>
+        // get inputs from query parameter
+        var urlParams = new URLSearchParams(window.location.search);
+        var from = urlParams.get("from");
+        var to = urlParams.get("to");
+        var time = urlParams.get("time");
+        var date = urlParams.get("date");
+
+        // display inputs
+        document.getElementById("from").textContent = from;
+        document.getElementById("to").textContent = to;
+        document.getElementById("time").textContent = time;
+        document.getElementById("date").textContent = date;
+    </script>
+
+        <h2>contact info</h2>
+        <p>Required fields are denoted by *</p>
+        <p>Name: *<input type="text" name="name" required placeholder="Enter Your Name"></p>
+        <fieldset>
+            <legend class="overflow">Gender</legend>
+        <p><input type="radio" name="gender" id="male"> Male
+         <input type="radio" name="gender" id="female"> Female</p>
+    </fieldset>
+    <p>
+        address: <textarea name="Address" style="text-transform: capitalize;" id="Address" cols="30" rows="10"  placeholder="Enter your Address"></textarea>
+    </p>
+    <p>email: <input type="email" name="email" id="email" required placeholder="Enter Your Email"></p>
+    <p>pincode: <input type="number" name="pincode" id="pincode" placeholder="Enter Your Pincode"></p>
+    <h2>payment information</h2>
+    <p>Card Type
+    <select name="card-type" id="card-type">
+        <option value="" style="text-transform: capitalize;">--select a card--</option>
+        <option value="visa" >visa</option>
+        <option value="rupay">rupay</option>
+    </select>
+    </p>
+    <p>
+        card number <input type="number" name="card-number" id="card-number">
+
+    </p>
+    <p>
+        expiry date <input type="date" name="exp-date" id="exp-date">
+
+    </p>
+    <p>
+        CVV <input type="password" name="cvv" id="cvv" placeholder="Enter Your CVV">
+    </p>
+    <input type="submit" value="PAY NOW" >
+    </form>
+</div>
+<a href="index.html">Go Back</a>
+</body>
+</html>
