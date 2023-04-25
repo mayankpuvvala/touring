@@ -11,7 +11,7 @@
   "dependencies": {
     "body-parser": "^1.19.0",
     "express.js": "^1.0.0",
-    "knex": "^0.95.6",
+    "knex": "^2.4.0",
     "nodemon": "^2.0.7",
     "pg": "^8.6.0"
   }
